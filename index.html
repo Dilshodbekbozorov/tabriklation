@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yangi Yil Tabrigi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Chiroqlar -->
+    <div class="lights" id="lights"></div>
+
+    <!-- Qor yog'ish -->
+    <div id="snowfall"></div>
+
+    <!-- Yerda to'plangan qor -->
+    <div class="snow-ground"></div>
+
+    <!-- Qorbobo va archalar -->
+    <div class="decorations">
+        <div class="tree">🎄</div>
+        <div class="snowman">⛄</div>
+        <div class="tree">🎄</div>
+    </div>
+
+    <!-- Asosiy kontent -->
+    <div class="container">
+        <div class="main-content">
+            <h1>✨ Yangi Yil Muborak! ✨</h1>
+            <button class="button" onclick="openModal()">Tabrik Yaratish</button>
+        </div>
+    </div>
+
+    <!-- Modal (Template va ism kiritish) -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <!-- Template tanlash qismi -->
+            <div id="templateSection">
+                <h2>Tabrik ko'rinishini tanlang</h2>
+                <div class="template-selection">
+                    <div class="template-item" onclick="selectTemplate(1)">
+                        <img src="./template1.png" alt="Template 1">
+                        <div class="check-mark">✓</div>
+                    </div>
+                    <div class="template-item" onclick="selectTemplate(2)">
+                        <img src="./template2.png" alt="Template 2">
+                        <div class="check-mark">✓</div>
+                    </div>
+                    <div class="template-item" onclick="selectTemplate(3)">
+                        <img src="./template3.png" alt="Template 3">
+                        <div class="check-mark">✓</div>
+                    </div>
+                </div>
+                <button onclick="goToNameInput()">Davom etish</button>
+            </div>
+
+            <!-- Ism kiritish qismi -->
+            <div class="name-input-section" id="nameSection">
+                <h2>Ismingizni kiriting</h2>
+                <input type="text" id="nameInput" placeholder="Ismingiz..." maxlength="50">
+                <div>
+                    <button class="back-btn" onclick="backToTemplates()">Ortga</button>
+                    <button onclick="createGreeting()">Tabrik Yaratish</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tabrik kartasi -->
+    <div class="greeting-card" id="greetingCard">
+        <div class="card-container">
+            <button class="close-btn" onclick="closeCard()">×</button>
+            <img src="" class="card-image" id="cardImage" alt="Tabrik kartasi">
+            <div class="card-text" id="cardText"></div>
+            <button class="download-btn" onclick="downloadCard()">Yuklab Olish</button>
+        </div>
+    </div>
+
+   <script src="./script.js"></script>
+</body>
+</html>
